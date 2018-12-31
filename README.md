@@ -1,7 +1,7 @@
 <center>
 <img align="left" src="https://cdn.discordapp.com/app-assets/529016610137309184/529052463643230211.png">
 <h1>SCS Discord Rich Presence</h1>
-Euro Truck simulator 2 & American Truck simulator
+Euro Truck Simulator 2 & American Truck Simulator
 </center> 
 </br>
 
@@ -15,7 +15,7 @@ ___
 * [Contributing](#contributing)
 
 ## General info
-This project is simple discord rich presence for SCS games ETS2 and ATS (possibly more in the future).
+This project is simple discord rich presence for SCS software games ETS2 and ATS (possibly more in the future 🤞).
 
 Here is quick preview:
 
