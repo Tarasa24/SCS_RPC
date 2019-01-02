@@ -23,24 +23,36 @@ Here is quick preview:
 	
 ## Technologies
 Project is created with:
-* [python-discord-rpc](https://github.com/suclearnub/python-discord-rpc) - outdated, yet still functional
-* [ETS2 Log to Coordinates](https://github.com/Koenvh1/ETS2-City-Coordinate-Retriever) - cities.json
-* [ETS2 Telemetry Web Server 3.2.5](https://github.com/Funbit/ets2-telemetry-server) - api
+* <a href="https://github.com/suclearnub/python-discord-rpc" target="_blank">python-discord-rpc</a>
+* <a href="https://github.com/Koenvh1/ETS2-City-Coordinate-Retriever" target="_blank">ETS2 Log to Coordinates</a>
+* <a href="https://github.com/nlhans/ets2-sdk-plugin" target="_blank">SDK plugin</a>
+* <a href="https://github.com/jurkov/ets2-sdk-python-plugin" target="_blank">SDK python client</a>
+* <a href="https://github.com/pyinstaller/pyinstaller" target="_blank">PyInstaller</a>
 
 ## Requirements and Setup
-Until is this project **entirely written in python and not converted to exe**, python itself and dependencies must be **installed manually**.
+You need to download <a href="https://github.com/nlhans/ets2-sdk-plugin/releases" target="_blank">latest release</a> of SDK plugin and put .dll to the folder as described below.
+
+```
+..\steamapps\common\<desired simualtor>\bin\win_x64\plugins
+or 
+..\steamapps\common\<desired simualtor>\bin\win_x86\plugins
+```
+___
+**Only if you are planning to run python scrip**, you will need: Python itself and dependencies.
 
 [Python](https://www.python.org/) 🐍
 ```
 $ cd ../SCS_RPC
-$ pip install -r requirements.txt
+$ pip install -r _requirements.txt
 ```
 
 ## Execution
-Simply run **run_me.bat**
+Simply run **SCS_RPC.exe**
+
+Alternatively run **py.bat** when using Python (batch file is used because of working directory)
 
 ## Contributing
-Take a look at [example api json](https://github.com/Tarasa24/scs_rpc/blob/master/server/Ets2TestTelemetry.json). If you have any nice idea how to utilize this data even more, hit me up on discord: **Tarasa24**#1761
+Take a look at <a href="https://github.com/Funbit/ets2-telemetry-server/blob/master/server/Ets2TestTelemetry.json" target="_blank">example json</a>. If you have any nice idea how to utilize this data even more, hit me up on discord: **Tarasa24**#1761
 
 .
 
