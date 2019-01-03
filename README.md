@@ -17,6 +17,8 @@ ___
 ## General info
 This project is simple discord rich presence for SCS software games ETS2 and ATS (possibly more in the future 🤞).
 
+Project is bound on json files in folder *cities*. Don't move individual executables / python scripts from respective folders.
+
 Here is quick preview:
 
 ![cmd_view](https://i.imgur.com/bgJTTS2.png) ![Discord Rich Presence](https://i.imgur.com/nyazDBN.png)
@@ -42,7 +44,7 @@ ___
 
 [Python](https://www.python.org/) 🐍
 ```
-$ cd ../SCS_RPC
+$ cd ../SCS_RPC/python
 $ pip install -r _requirements.txt
 ```
 
@@ -52,7 +54,7 @@ Simply run **SCS_RPC.exe**
 Alternatively run **py.bat** when using Python (batch file is used because of working directory)
 
 ## Contributing
-Take a look at <a href="https://github.com/Funbit/ets2-telemetry-server/blob/master/server/Ets2TestTelemetry.json" target="_blank">example json</a>. If you have any nice idea how to utilize this data even more, hit me up on discord: **Tarasa24**#1761
+Take a look at <a href="https://github.com/Funbit/ets2-telemetry-server/blob/master/server/Ets2TestTelemetry.json" target="_blank">example json</a>. If you have any idea how to nicely utilize this data even more, hit me up on discord: **Tarasa24**#1761
 
 .
 
