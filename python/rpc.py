@@ -158,7 +158,10 @@ class WinDiscordIpcClient(DiscordIpcClient):
 
     def _write(self, data: bytes):
         self._f.write(data)
-        self._f.flush()
+        try:
+            self._f.flush()
+        except:
+            pass
 
     def _recv(self, size: int) -> bytes:
         return self._f.read(size)

@@ -18,6 +18,7 @@ class bcolors:
 
 class base:
     game = "  "
+    km_mil = 0
     vehicle_list = ["daf", "iveco", "man", "mercedes",
                     "renault", "scania", "volvo", "peterbilt", "kenworth"]
     start_time = int(time())
@@ -27,10 +28,12 @@ def client_id():
     os.system('cls')
     if processes.is_running("eurotrucks2.exe"):
         base.game = "ets2"
+        base.km_mil = 0
         return '529016610137309184'
 
     elif processes.is_running("amtrucks.exe"):
         base.game = "ats"
+        base.km_mil = 1
         return '529069002874421249'
     else:
         input("{}Sim is not running.{} Press any key when ready...\n".format(
@@ -51,13 +54,13 @@ while True:
         vehicle = "unknown"
 
     activity = {
-        "details": telemetry.getStatus(),
+        "details": telemetry.getStatus()[base.km_mil],
         "state": telemetry.getClosestCity(),
         "timestamps": {
             "start": base.start_time
         },
         "assets": {
-            "small_text": "{} | {}".format(telemetry.getVehicle(), telemetry.getSpeed()),
+            "small_text": "{} | {}".format(telemetry.getVehicle(), telemetry.getSpeed()[base.km_mil]),
             "small_image": vehicle,
             "large_image": base.game
         }

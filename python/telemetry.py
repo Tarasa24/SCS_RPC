@@ -36,17 +36,19 @@ def getClosestCity():
 
 def getSpeed():
     data.update()
-    speed = round(data.speed * 3.6)
-    return "{} km/h".format(speed)
+    speedkmh = round(data.speed * 3.6)
+    speedmph = round(speedkmh * 0.62)
+    return ["{} km/h".format(speedkmh), "{} mph".format(speedmph)]
 
 
 def getStatus():
     def getDistance(data):
-        distance = round(data.routeDistance / 1000)
-        return "{}km".format(distance)
+        distancekm = round(data.routeDistance / 1000)
+        distancemil = round(distancekm * 0.62)
+        return [str(distancekm), str(distancemil)]
     name = data.trailerName
     weight = round(data.trailerMass / 1000)
     if name is not "":
-        return "{} ({}t) | {}".format(name, weight, getDistance(data))
+        return ["{} ({}t) | {} km".format(name, weight, getDistance(data)[0]), "{} ({}t) | {} mil".format(name, weight, getDistance(data)[1])]
     else:
-        return "Freeroaming..."
+        return ["Freeroaming...", "Freeroaming..."]
