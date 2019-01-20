@@ -2,7 +2,7 @@
 <img align="left" src="https://cdn.discordapp.com/app-assets/529016610137309184/529052463643230211.png">
 <h1>SCS Discord Rich Presence</h1>
 Euro Truck Simulator 2 & American Truck Simulator
-</center> 
+</center>
 </br>
 
 
@@ -22,7 +22,8 @@ Project is bound on json files in folder *cities*. Don't move individual executa
 Here is quick preview:
 
 ![cmd_view](https://i.imgur.com/bgJTTS2.png) ![Discord Rich Presence](https://i.imgur.com/nyazDBN.png)
-	
+![cmd_view ATS](https://i.imgur.com/hpABirQ.png) ![Discord Rich Presence ATS](https://i.imgur.com/em4T5Th.png)
+
 ## Technologies
 Project is created with:
 * <a href="https://github.com/suclearnub/python-discord-rpc" target="_blank">python-discord-rpc</a>
@@ -36,7 +37,7 @@ You need to download <a href="https://github.com/nlhans/ets2-sdk-plugin/releases
 
 ```
 ..\steamapps\common\<desired simualtor>\bin\win_x64\plugins
-or 
+or
 ..\steamapps\common\<desired simualtor>\bin\win_x86\plugins
 ```
 ___
