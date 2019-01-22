@@ -157,8 +157,8 @@ class WinDiscordIpcClient(DiscordIpcClient):
         self.path = path
 
     def _write(self, data: bytes):
-        self._f.write(data)
         try:
+            self._f.write(data)
             self._f.flush()
         except:
             pass

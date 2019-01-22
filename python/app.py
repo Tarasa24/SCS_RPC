@@ -3,6 +3,19 @@ import telemetry
 import processes
 import os
 from time import time, sleep
+import logging
+import sys
+
+
+logger = logging.getLogger('app.py logger')
+logging.basicConfig(filename='app.py logger.log', level=logging.DEBUG,
+                    format='[%(asctime)s] {%(pathname)s:%(lineno)d} %(levelname)s - %(message)s')
+
+def my_handler(type, value, tb):
+    logger.exception("Uncaught exception: {0}".format(str(value)))
+
+# Install exception handler
+sys.excepthook = my_handler
 
 
 class bcolors:
