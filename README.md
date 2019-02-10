@@ -8,7 +8,6 @@ Euro Truck Simulator 2 & American Truck Simulator
 
 ___
 ## Table of contents
-- [Table of contents](#table-of-contents)
 - [General info](#general-info)
 - [Technologies](#technologies)
 - [Requirements and Setup](#requirements-and-setup)
