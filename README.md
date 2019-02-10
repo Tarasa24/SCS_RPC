@@ -47,14 +47,14 @@ ___
 
 [Python](https://www.python.org/) 🐍
 ```
-$ cd ../SCS_RPC/python
+$ cd .\SCS_RPC\python
 $ pip install -r requirements.txt
 ```
 
 ## Execution
 Simply run **SCS_RPC.exe**
 
-Alternatively run **py.bat** when using Python (batch file is used because of working directory)
+Alternatively execute **app.py** when using Python from inside python folder.
 
 ## Contributing
 Take a look at <a href="https://github.com/Funbit/ets2-telemetry-server/blob/master/server/Ets2TestTelemetry.json" target="_blank">example json</a>. If you have any idea how to nicely utilize this data even more, hit me up on discord: **Tarasa24**#1761
