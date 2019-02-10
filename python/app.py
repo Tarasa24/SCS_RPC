@@ -1,4 +1,4 @@
-import rpc
+from pypresence import Presence
 import telemetry
 import processes
 import os
@@ -7,12 +7,18 @@ import logging
 import sys
 
 
+with open("app.py logger.log", 'a') as f:
+    f.write("========== START =========\n")
+
+
 logger = logging.getLogger('app.py logger')
-logging.basicConfig(filename='app.py logger.log', level=logging.DEBUG,
+logging.basicConfig(filename='app.py logger.log', level=logging.INFO,
                     format='[%(asctime)s] {%(pathname)s:%(lineno)d} %(levelname)s - %(message)s')
+
 
 def my_handler(type, value, tb):
     logger.exception("Uncaught exception: {0}".format(str(value)))
+
 
 # Install exception handler
 sys.excepthook = my_handler
@@ -54,7 +60,9 @@ def client_id():
         return client_id()
 
 
-rpc_obj = rpc.DiscordIpcClient.for_platform(client_id())
+RPC = Presence(client_id())
+RPC.connect()
+
 telemetry.update()
 while True:
 
@@ -69,19 +77,23 @@ while True:
     activity = {
         "details": telemetry.getStatus()[base.km_mil],
         "state": telemetry.getClosestCity(),
-        "timestamps": {
-            "start": base.start_time
-        },
+        "start": base.start_time,
         "assets": {
             "small_text": "{} | {}".format(telemetry.getVehicle(), telemetry.getSpeed()[base.km_mil]),
             "small_image": vehicle,
             "large_image": base.game
         }
     }
-    rpc_obj.set_activity(activity)
+    RPC.update(details=activity["details"],
+               state=activity["state"],
+               start=activity["start"],
+               small_text=activity["assets"]["small_text"],
+               small_image=activity["assets"]["small_image"],
+               large_image=activity["assets"]["large_image"])
     print(activity["details"])
     print(activity["assets"]["small_text"])
     print(activity["state"])
 
-    telemetry.update()
+    logging.info(activity)
     sleep(15)  # Can only update rich presence every 15 seconds
+    telemetry.update()

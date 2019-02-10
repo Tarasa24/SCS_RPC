@@ -8,11 +8,13 @@ Euro Truck Simulator 2 & American Truck Simulator
 
 ___
 ## Table of contents
-* [General info](#general-info)
-* [Technologies](#technologies)
-* [Requirements and Setup](#requirements-and-setup)
-* [Execution](#execution)
-* [Contributing](#contributing)
+- [Table of contents](#table-of-contents)
+- [General info](#general-info)
+- [Technologies](#technologies)
+- [Requirements and Setup](#requirements-and-setup)
+- [Execution](#execution)
+- [Contributing](#contributing)
+- [Acknowledgement](#acknowledgement)
 
 ## General info
 This project is simple discord rich presence for SCS software games ETS2 and ATS (possibly more in the future 🤞).
@@ -26,7 +28,7 @@ Here is quick preview:
 
 ## Technologies
 Project is created with:
-* <a href="https://github.com/suclearnub/python-discord-rpc" target="_blank">python-discord-rpc</a>
+* <a href="https://github.com/qwertyquerty/pypresence" target="_blank">pypresence</a>
 * <a href="https://github.com/Koenvh1/ETS2-City-Coordinate-Retriever" target="_blank">ETS2 Log to Coordinates</a>
 * <a href="https://github.com/nlhans/ets2-sdk-plugin" target="_blank">SDK plugin</a>
 * <a href="https://github.com/jurkov/ets2-sdk-python-plugin" target="_blank">SDK python client</a>
@@ -46,7 +48,7 @@ ___
 [Python](https://www.python.org/) 🐍
 ```
 $ cd ../SCS_RPC/python
-$ pip install -r _requirements.txt
+$ pip install -r requirements.txt
 ```
 
 ## Execution
