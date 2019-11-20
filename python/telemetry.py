@@ -1,10 +1,10 @@
-import ets2sdk
+import scs2sdk
 import closest_city
 import processes
 from us import us
 import pycountry
 
-data = ets2sdk.ets2sdkclient()
+data = scs2sdk.scssdkclient()
 
 
 def update():
