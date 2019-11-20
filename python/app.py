@@ -11,7 +11,7 @@ init(autoreset=True)
 class base:
     game = "  "
     km_mil = 0
-    vehicle_list = ["daf", "iveco", "man", "mercedes",
+    vehicle_list = ["daf", "iveco", "man", "mercedes-benz",
                     "renault", "scania", "volvo", "peterbilt", "kenworth"]
     start_time = int(time())
 
@@ -44,7 +44,7 @@ while True:
     print("Game: " + Fore.GREEN + "ready v" + telemetry.gameVersion())
     print(20 * "=")
 
-    vehicle = telemetry.getVehicleID()
+    vehicle = telemetry.getVehicle()
     if vehicle not in base.vehicle_list:
         vehicle = "unknown"
 
@@ -53,7 +53,7 @@ while True:
         "state": telemetry.getClosestCity(),
         "start": base.start_time,
         "assets": {
-            "small_text": "{} | {}".format(telemetry.getVehicle(), telemetry.getSpeed()[base.km_mil]),
+            "small_text": "{} | {}".format(telemetry.getVehicleFull(), telemetry.getSpeed()[base.km_mil]),
             "small_image": vehicle,
             "large_image": base.game
         }
