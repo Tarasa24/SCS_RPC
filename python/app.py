@@ -1,21 +1,12 @@
 from pypresence import Presence
 import telemetry
 import processes
-import os
 from time import time, sleep
 import logging
 import sys
+from colorama import Fore, ansi, init
 
-class bcolors:
-    HEADER = '\033[95m'
-    OKBLUE = '\033[94m'
-    OKGREEN = '\033[92m'
-    WARNING = '\033[93m'
-    FAIL = '\033[91m'
-    ENDC = '\033[0m'
-    BOLD = '\033[1m'
-    UNDERLINE = '\033[4m'
-
+init(autoreset=True)
 
 class base:
     game = "  "
@@ -26,7 +17,7 @@ class base:
 
 
 def client_id():
-    os.system('cls')
+    print(ansi.clear_screen())
     if processes.is_running("eurotrucks2.exe"):
         base.game = "ets2"
         base.km_mil = 0
@@ -37,8 +28,8 @@ def client_id():
         base.km_mil = 1
         return '529069002874421249'
     else:
-        input("{}Sim is not running.{} Press any key when ready...\n".format(
-            bcolors.FAIL, bcolors.ENDC))
+        print(Fore.RED + "Sim is not running ")
+        input("Press any key when ready...\n")
         return client_id()
 
 
@@ -47,10 +38,11 @@ RPC.connect()
 
 telemetry.update()
 while True:
-
-    os.system('cls')
-    print("RPC pipe: {}connected!{}".format(bcolors.OKGREEN, bcolors.ENDC))
-    print("Simulator: {}running...{}\n".format(bcolors.OKGREEN, bcolors.ENDC))
+    print(ansi.clear_screen())
+    print("RPC pipe: " + Fore.GREEN + "connected")
+    print("SDK: " + Fore.GREEN + "loaded v" + telemetry.sdkVersion())
+    print("Game: " + Fore.GREEN + "ready v" + telemetry.gameVersion())
+    print(20 * "=")
 
     vehicle = telemetry.getVehicleID()
     if vehicle not in base.vehicle_list:

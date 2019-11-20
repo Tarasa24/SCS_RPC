@@ -12,6 +12,15 @@ def update():
 
 
 def getVehicle():
+def gameVersion():
+    return "{}.{}".format(str(data.ets2_version_major), str(data.ets2_version_minor))
+
+
+def sdkVersion():
+    return str(data.ets2_telemetry_plugin_revision)
+
+
+def getVehicleFull():
     return "{} {}".format(data.truckMake, data.truckModel)
 
 
