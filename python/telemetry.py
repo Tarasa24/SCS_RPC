@@ -56,7 +56,4 @@ def getStatus():
         return [str(distancekm), str(distancemil)]
     name = data.trailerName
     weight = round(data.trailerMass / 1000)
-    if name is not "":
-        return ["{} ({}t) | {} km".format(name, weight, getDistance(data)[0]), "{} ({}t) | {} mil".format(name, weight, getDistance(data)[1])]
-    else:
-        return ["Freeroaming...", "Freeroaming..."]
+    return ["{} ({}t) | {} km".format(name, weight, getDistance(data)[0]), "{} ({}t) | {} mil".format(name, weight, getDistance(data)[1])]
