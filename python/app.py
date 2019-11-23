@@ -27,8 +27,10 @@ def client_id():
         base.km_mil = 1
         return '529069002874421249'
     else:
-        print(Fore.RED + "Sim is not running ")
-        input("Press any key when ready...\n")
+        print(Fore.RED + "No game detected /:\\")
+        for i in reversed(range(0,6)):
+            sleep(1)
+            print("Checking again in: " + Fore.YELLOW + str(i))
         return client_id()
 
 
@@ -69,3 +71,14 @@ while True:
 
     sleep(15)  # Can only update rich presence every 15 seconds
     telemetry.update()
+    if processes.is_running("eurotrucks2.exe"):
+        continue
+    elif processes.is_running("amtrucks.exe"):
+        continue
+    break
+
+print(ansi.clear_screen())
+print(Fore.RED + "No game detected /:\\")
+for i in reversed(range(0,5)):
+    sleep(1)
+    print("Shutting down in: " + Fore.YELLOW + str(i))
