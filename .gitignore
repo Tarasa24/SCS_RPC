@@ -1,4 +1,11 @@
 __pycache__/
 env/
+**/dbs/dump/
+build/
 
 /.vscode
+
+**/dbs/cities/usr_ets2/*
+!**/dbs/cities/usr_ets2/.gitkeep
+**/dbs/cities/usr_ats/*
+!**/dbs/cities/usr_ats/.gitkeep
