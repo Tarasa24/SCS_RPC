@@ -3,6 +3,7 @@ from scipy import spatial
 import json
 import os
 
+
 def names(d):
     names_list = []
     for e in d["citiesList"]:
@@ -39,6 +40,7 @@ with open('dbs/cities/cities_ats.json', encoding='utf-8') as y:
                         cities_ats["citiesList"][names_ats.index(e.get("realName"))] = e
                     else:
                         cities_ats["citiesList"].append(e)
+
 
 def chooseJson():
     if processes.is_running("eurotrucks2.exe"):

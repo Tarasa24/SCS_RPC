@@ -7,6 +7,7 @@ from colorama import Fore, ansi, init
 
 init(autoreset=True)
 
+
 class base:
     game = "  "
     km_mil = 0
@@ -28,7 +29,7 @@ def client_id():
         return '529069002874421249'
     else:
         print(Fore.RED + "No game detected /:\\")
-        for i in reversed(range(0,6)):
+        for i in reversed(range(0, 6)):
             sleep(1)
             print("Checking again in: " + Fore.YELLOW + str(i))
         return client_id()
@@ -79,6 +80,6 @@ while True:
 
 print(ansi.clear_screen())
 print(Fore.RED + "No game detected /:\\")
-for i in reversed(range(0,5)):
+for i in reversed(range(0, 5)):
     sleep(1)
     print("Shutting down in: " + Fore.YELLOW + str(i))

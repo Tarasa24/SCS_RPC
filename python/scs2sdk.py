@@ -1,6 +1,7 @@
 import mmap
 import struct
 
+
 class scssdkclient:
     def update(self):
         self.mm = mmap.mmap(0, 1024, "Local\\SimTelemetryETS2")
