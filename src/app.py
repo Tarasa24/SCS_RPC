@@ -1,6 +1,5 @@
 from pypresence import Presence
-import telemetry
-import processes
+from modules import telemetry, processes
 from time import time, sleep
 import sys
 from colorama import Fore, ansi, init
