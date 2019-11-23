@@ -1,8 +1,7 @@
 import scs2sdk
 import closest_city
 import processes
-from us import us
-import pycountry
+from countries import ISOcode
 
 data = scs2sdk.scssdkclient()
 
@@ -28,13 +27,6 @@ def getVehicle():
 
 
 def getClosestCity():
-    def ISOcode(country):
-        if processes.is_running("eurotrucks2.exe"):
-            for e in list(pycountry.countries):
-                if country in e.name.lower():
-                    return e.alpha_2
-        elif processes.is_running("amtrucks.exe"):
-            return us.get(country.title())
     coord = (data.coordinateX, data.coordinateZ)
     querry = closest_city.ccQuerry(coord)
     city = querry["realName"]

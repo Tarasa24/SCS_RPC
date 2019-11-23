@@ -5,14 +5,14 @@ import json
 
 def chooseJson():
     if processes.is_running("eurotrucks2.exe"):
-        with open('cities/ETS2_cities.json', encoding='utf-8') as x:
+        with open('dbs/cities/cities_ets2.json', encoding='utf-8') as x:
             data = json.load(x)
             cities = []
             for e in data["citiesList"]:
                 cities.append((float(e["x"]), float(e["z"])))
             return (cities, data)
     elif processes.is_running("amtrucks.exe"):
-        with open('cities/ATS_cities.json', encoding='utf-8') as y:
+        with open('dbs/cities/cities_ats.json', encoding='utf-8') as y:
             data = json.load(y)
             cities = []
             for e in data["citiesList"]:
