@@ -12,15 +12,18 @@ with open('dbs/states/us.json', 'r') as f:
 
 
 def ISOcode(country):
+    country = country.replace("_", " ")
     if processes.is_running("eurotrucks2.exe"):
         for e in world_db:
-            if country == e.get("name").lower() or country in e.get("name").lower():
+            db_name = e.get("name").lower() 
+            if country == db_name or country in db_name:
                 return e.get("alpha")
         else:
             return "??"
     elif processes.is_running("amtrucks.exe"):
         for e in us_db:
-            if country == e.get("name").lower() or country in e.get("name").lower():
+            db_name = e.get("name").lower() 
+            if country == db_name or country in db_name:
                 return e.get("alpha")
         else:
             return "??"
