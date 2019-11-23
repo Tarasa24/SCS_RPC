@@ -1,7 +1,7 @@
-import scs2sdk
-import closest_city
-import processes
-from countries import ISOcode
+from modules import scs2sdk
+from modules import closest_city
+from modules import processes
+from modules.countries import ISOcode
 
 data = scs2sdk.scssdkclient()
 

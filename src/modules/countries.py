@@ -1,5 +1,5 @@
 import json
-import processes
+from modules import processes
 
 
 world_db = None

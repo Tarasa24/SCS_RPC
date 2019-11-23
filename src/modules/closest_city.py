@@ -1,4 +1,4 @@
-import processes
+from modules import processes
 from scipy import spatial
 import json
 import os
