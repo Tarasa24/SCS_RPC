@@ -1,50 +1,23 @@
 from pypresence import Presence
 import telemetry
 import processes
-import os
 from time import time, sleep
-import logging
 import sys
+from colorama import Fore, ansi, init
 
-
-with open("app.py logger.log", 'a') as f:
-    f.write("========== START =========\n")
-
-
-logger = logging.getLogger('app.py logger')
-logging.basicConfig(filename='app.py logger.log', level=logging.INFO,
-                    format='[%(asctime)s] {%(pathname)s:%(lineno)d} %(levelname)s - %(message)s')
-
-
-def my_handler(type, value, tb):
-    logger.exception("Uncaught exception: {0}".format(str(value)))
-
-
-# Install exception handler
-sys.excepthook = my_handler
-
-
-class bcolors:
-    HEADER = '\033[95m'
-    OKBLUE = '\033[94m'
-    OKGREEN = '\033[92m'
-    WARNING = '\033[93m'
-    FAIL = '\033[91m'
-    ENDC = '\033[0m'
-    BOLD = '\033[1m'
-    UNDERLINE = '\033[4m'
+init(autoreset=True)
 
 
 class base:
     game = "  "
     km_mil = 0
-    vehicle_list = ["daf", "iveco", "man", "mercedes",
+    vehicle_list = ["daf", "iveco", "man", "mercedes-benz",
                     "renault", "scania", "volvo", "peterbilt", "kenworth"]
     start_time = int(time())
 
 
 def client_id():
-    os.system('cls')
+    print(ansi.clear_screen())
     if processes.is_running("eurotrucks2.exe"):
         base.game = "ets2"
         base.km_mil = 0
@@ -55,8 +28,10 @@ def client_id():
         base.km_mil = 1
         return '529069002874421249'
     else:
-        input("{}Sim is not running.{} Press any key when ready...\n".format(
-            bcolors.FAIL, bcolors.ENDC))
+        print(Fore.RED + "No game detected /:\\")
+        for i in reversed(range(0, 6)):
+            sleep(1)
+            print("Checking again in: " + Fore.YELLOW + str(i))
         return client_id()
 
 
@@ -65,12 +40,13 @@ RPC.connect()
 
 telemetry.update()
 while True:
+    print(ansi.clear_screen())
+    print("RPC pipe: " + Fore.GREEN + "connected")
+    print("SDK: " + Fore.GREEN + "loaded v" + telemetry.sdkVersion())
+    print("Game: " + Fore.GREEN + "ready v" + telemetry.gameVersion())
+    print(20 * "=")
 
-    os.system('cls')
-    print("RPC pipe: {}connected!{}".format(bcolors.OKGREEN, bcolors.ENDC))
-    print("Simulator: {}running...{}\n".format(bcolors.OKGREEN, bcolors.ENDC))
-
-    vehicle = telemetry.getVehicleID()
+    vehicle = telemetry.getVehicle()
     if vehicle not in base.vehicle_list:
         vehicle = "unknown"
 
@@ -79,7 +55,7 @@ while True:
         "state": telemetry.getClosestCity(),
         "start": base.start_time,
         "assets": {
-            "small_text": "{} | {}".format(telemetry.getVehicle(), telemetry.getSpeed()[base.km_mil]),
+            "small_text": "{} | {}".format(telemetry.getVehicleFull(), telemetry.getSpeed()[base.km_mil]),
             "small_image": vehicle,
             "large_image": base.game
         }
@@ -94,6 +70,16 @@ while True:
     print(activity["assets"]["small_text"])
     print(activity["state"])
 
-    logging.info(activity)
     sleep(15)  # Can only update rich presence every 15 seconds
     telemetry.update()
+    if processes.is_running("eurotrucks2.exe"):
+        continue
+    elif processes.is_running("amtrucks.exe"):
+        continue
+    break
+
+print(ansi.clear_screen())
+print(Fore.RED + "No game detected /:\\")
+for i in reversed(range(0, 5)):
+    sleep(1)
+    print("Shutting down in: " + Fore.YELLOW + str(i))

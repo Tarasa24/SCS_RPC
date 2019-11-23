@@ -1,32 +1,32 @@
-import ets2sdk
+import scs2sdk
 import closest_city
 import processes
-from us import us
-import pycountry
+from countries import ISOcode
 
-data = ets2sdk.ets2sdkclient()
+data = scs2sdk.scssdkclient()
 
 
 def update():
     data.update()
 
 
-def getVehicle():
+def gameVersion():
+    return "{}.{}".format(str(data.ets2_version_major), str(data.ets2_version_minor))
+
+
+def sdkVersion():
+    return str(data.ets2_telemetry_plugin_revision)
+
+
+def getVehicleFull():
     return "{} {}".format(data.truckMake, data.truckModel)
 
 
-def getVehicleID():
-    return data.truckMakeId
+def getVehicle():
+    return data.truckMake.lower()
 
 
 def getClosestCity():
-    def ISOcode(country):
-        if processes.is_running("eurotrucks2.exe"):
-            for e in list(pycountry.countries):
-                if country in e.name.lower():
-                    return e.alpha_2
-        elif processes.is_running("amtrucks.exe"):
-            return us.get(country.title())
     coord = (data.coordinateX, data.coordinateZ)
     querry = closest_city.ccQuerry(coord)
     city = querry["realName"]
@@ -47,8 +47,7 @@ def getStatus():
         distancemil = round(distancekm * 0.62)
         return [str(distancekm), str(distancemil)]
     name = data.trailerName
-    weight = round(data.trailerMass / 1000)
-    if name is not "":
-        return ["{} ({}t) | {} km".format(name, weight, getDistance(data)[0]), "{} ({}t) | {} mil".format(name, weight, getDistance(data)[1])]
-    else:
-        return ["Freeroaming...", "Freeroaming..."]
+    if name == "":
+        name = "Empty"
+    weight = data.trailerMass // 1000
+    return ["{} ({}t) | {} km".format(name, weight, getDistance(data)[0]), "{} ({}t) | {} mil".format(name, weight, getDistance(data)[1])]
