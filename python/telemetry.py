@@ -55,5 +55,7 @@ def getStatus():
         distancemil = round(distancekm * 0.62)
         return [str(distancekm), str(distancemil)]
     name = data.trailerName
-    weight = round(data.trailerMass / 1000)
+    if name == "":
+        name = "Empty"
+    weight = data.trailerMass // 1000
     return ["{} ({}t) | {} km".format(name, weight, getDistance(data)[0]), "{} ({}t) | {} mil".format(name, weight, getDistance(data)[1])]
