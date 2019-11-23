@@ -2,7 +2,6 @@ from pypresence import Presence
 import telemetry
 import processes
 from time import time, sleep
-import logging
 import sys
 from colorama import Fore, ansi, init
 
@@ -68,6 +67,5 @@ while True:
     print(activity["assets"]["small_text"])
     print(activity["state"])
 
-    logging.info(activity)
     sleep(15)  # Can only update rich presence every 15 seconds
     telemetry.update()
