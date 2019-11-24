@@ -1,65 +1,76 @@
 <center>
 <img align="left" src="https://cdn.discordapp.com/app-assets/529016610137309184/529052463643230211.png">
 <h1>SCS Discord Rich Presence</h1>
-Euro Truck Simulator 2 & American Truck Simulator
+Unofficial Open-source Discord Rich Presence for ETS2 and ATS
 </center>
 </br>
 
+---
 
-___
 ## Table of contents
+
 - [General info](#general-info)
 - [Technologies](#technologies)
-- [Requirements and Setup](#requirements-and-setup)
+- [Setup](#setup)
 - [Execution](#execution)
-- [Contributing](#contributing)
+- [Contact](#contact)
+- [Build from source](#Build-from-source)
 - [Acknowledgement](#acknowledgement)
 
 ## General info
-This project is simple discord rich presence for SCS software games ETS2 and ATS (possibly more in the future 🤞).
 
-Project is bound on json files in folder *cities*. Don't move individual executables / python scripts from respective folders.
+As the name suggests, this project provides Rich presence for Discord, displaying information like:
 
-Here is quick preview:
+- Transported cargo
+- It's respective tonnage
+- Distance to the destination
+- Manufacturer and model of your truck
+- Speed
+- And approximate position in the world
 
-![cmd_view](https://i.imgur.com/bgJTTS2.png) ![Discord Rich Presence](https://i.imgur.com/nyazDBN.png)
-![cmd_view ATS](https://i.imgur.com/hpABirQ.png) ![Discord Rich Presence ATS](https://i.imgur.com/em4T5Th.png)
+![cmd_view](https://i.imgur.com/cgIU28C.png)
+![Discord Rich Presence](https://i.imgur.com/RyL4qdj.png)
+![cmd_view ATS](https://i.imgur.com/tVpYvPE.png)
+![Discord Rich Presence ATS](https://i.imgur.com/5cIMkJb.png)
 
 ## Technologies
-Project is created with:
-* <a href="https://github.com/qwertyquerty/pypresence" target="_blank">pypresence</a>
-* <a href="https://github.com/Koenvh1/ETS2-City-Coordinate-Retriever" target="_blank">ETS2 Log to Coordinates</a>
-* <a href="https://github.com/nlhans/ets2-sdk-plugin" target="_blank">SDK plugin</a>
-* <a href="https://github.com/jurkov/ets2-sdk-python-plugin" target="_blank">SDK python client</a>
-* <a href="https://github.com/pyinstaller/pyinstaller" target="_blank">PyInstaller</a>
 
-## Requirements and Setup
-You need to download <a href="https://github.com/nlhans/ets2-sdk-plugin/releases" target="_blank">latest release</a> of SDK plugin and put .dll to the folder as described below.
+Created using:
 
-```
-..\steamapps\common\<desired simualtor>\bin\win_x64\plugins
-or
-..\steamapps\common\<desired simualtor>\bin\win_x86\plugins
-```
-___
-**Only if you are planning to run python scrip**, you will need: Python itself and dependencies.
+- <a href="https://github.com/qwertyquerty/pypresence" target="_blank">pypresence</a>
+- <a href="https://github.com/Koenvh1/ETS2-City-Coordinate-Retriever" target="_blank">ETS2 Log to Coordinates</a>
+- <a href="https://github.com/nlhans/ets2-sdk-plugin" target="_blank">SDK plugin</a>
+- <a href="https://anthony-tuininga.github.io/cx_Freeze/" target="_blank">cx_Freeze</a>
+- <a href="http://www.jrsoftware.org/isinfo.php" target="_blank">Inno Setup</a>
 
-[Python](https://www.python.org/) 🐍
-```
-$ cd .\SCS_RPC\python
-$ pip install -r requirements.txt
-```
+## Setup
+
+Download [latest release](https://github.com/Tarasa24/SCS_RPC/releases) and run the installer. Any further setup isn't necessary.
 
 ## Execution
-Simply run **SCS_RPC.exe**
 
-Alternatively execute **app.py** when using Python from inside python folder.
+Simply run **SCS_RPC.exe** located in the root installation directory.
 
-## Contributing
-Take a look at <a href="https://github.com/Funbit/ets2-telemetry-server/blob/master/server/Ets2TestTelemetry.json" target="_blank">example json</a>. If you have any idea how to nicely utilize this data even more, hit me up on discord: **Tarasa24**#1761
+Alternatively run any of batch files, likewise included in the root installation directory. These are used for automatically starting the rich presence along side of your game. These files are generated in the installer using provided paths to ets2 and or ats root directory.
 
-.
+| Batch files              |
+| ------------------------ |
+| ats_x64 and SCS_RPC.bat  |
+| ats_x86 and SCS_RPC.bat  |
+| ets2_x64 and SCS_RPC.bat |
+| ets2_x86 and SCS_RPC.bat |
+
+## Contact
+
+In case of any question hit me up on Discord **Tarasa24**#1761 as this is my obviously preferable mean of communication.
+
+## Build from source
+
+Navigate yourself to the [Wiki](https://github.com/Tarasa24/SCS_RPC/wiki) section (which is in time of writing work in progress).
+
+---
 
 ###### Acknowledgement
-I am not related to the company **SCS software s.r.o.** in any sense. This project is non-profit and open source. This project represents funbase both of SCS software and Discord.
-Any problems relating use of company name and/or their logo, will be resolved asap. I don't really want deal with **any** legal disputes regarding this project. Thank you for understanding.
+
+I am not related to the company **SCS software s.r.o.** in any sense. This project is non-profit and open source. This project represents fanbase both of SCS software and Discord.
+Any problems relating the use of company name and/or their logo, will be resolved asap. I don't want deal with **any** legal disputes regarding this project. Thank you for understanding.
