@@ -1,5 +1,5 @@
 from pypresence import Presence
-from modules import telemetry, processes
+from modules import telemetry, processes, config
 from time import time, sleep
 import sys
 from colorama import Fore, ansi, init
@@ -18,11 +18,13 @@ def client_id():
     print(ansi.clear_screen())
     if processes.is_running("eurotrucks2.exe"):
         base.km_mil = 0
-        return '529016610137309184'
+        base.vehicle_list += config.truckMake("ETS2")
+        return config.getID("ETS2", "529016610137309184")
 
     elif processes.is_running("amtrucks.exe"):
         base.km_mil = 1
-        return '529069002874421249'
+        base.vehicle_list += config.truckMake("ATS")
+        return config.getID("ATS", "529069002874421249")
     else:
         print(Fore.RED + "No game detected /:\\")
         for i in reversed(range(0, 6)):
