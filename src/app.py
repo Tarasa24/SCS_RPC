@@ -63,7 +63,8 @@ while True:
                start=activity["start"],
                small_text=activity["assets"]["small_text"],
                small_image=activity["assets"]["small_image"],
-               large_image=activity["assets"]["large_image"])
+               large_image=activity["assets"]["large_image"],
+               large_text="Made with ❤️ by Tarasa24")
     print(activity["details"])
     print(activity["assets"]["small_text"])
     print(activity["state"])
