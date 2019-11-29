@@ -8,7 +8,6 @@ init(autoreset=True)
 
 
 class base:
-    game = "  "
     km_mil = 0
     vehicle_list = ["daf", "iveco", "man", "mercedes-benz",
                     "renault", "scania", "volvo", "peterbilt", "kenworth"]
@@ -18,12 +17,10 @@ class base:
 def client_id():
     print(ansi.clear_screen())
     if processes.is_running("eurotrucks2.exe"):
-        base.game = "ets2"
         base.km_mil = 0
         return '529016610137309184'
 
     elif processes.is_running("amtrucks.exe"):
-        base.game = "ats"
         base.km_mil = 1
         return '529069002874421249'
     else:
@@ -56,7 +53,7 @@ while True:
         "assets": {
             "small_text": "{} | {}".format(telemetry.getVehicleFull(), telemetry.getSpeed()[base.km_mil]),
             "small_image": vehicle,
-            "large_image": base.game
+            "large_image": "cover"
         }
     }
     RPC.update(details=activity["details"],
