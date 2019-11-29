@@ -22,8 +22,8 @@ status = Executable(
     targetName="status.exe"
     )
 
-setup(name = "SCS_RPC",
-      version = "0.1",
-      description = "Unofficial Open-source Discord Rich Presence for ETS2 and ATS",
-      options = {"build_exe": build_exe_options},
-      executables = [app, status])
+setup(name="SCS_RPC",
+      version="0.1",
+      description="Unofficial Open-source Discord Rich Presence for ETS2 and ATS",
+      options={"build_exe": build_exe_options},
+      executables=[app, status])
