@@ -1,7 +1,12 @@
 __pycache__/
 env/
 **/dbs/dump/
-build/
+
+build/installer/
+build/out/
+build/compile.iss
+build/create_installer.sh
+build/ets2-telemetry.dll
 
 /.vscode
 
