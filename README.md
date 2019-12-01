@@ -64,7 +64,7 @@ Alternatively run any of batch files, likewise included in the root installation
 
 In case of any question hit me up on Discord **Tarasa24**#1761 or on Gitter.
 
-[![Discord](https://img.shields.io/badge/Tarasa24-1761-<color>.svg)](https://shields.io/)
+[![Discord](https://img.shields.io/badge/Tarasa24-1761-<color>.svg)](https://discordapp.com/activity)
 [![Gitter](https://badges.gitter.im/SCS_RPC/community.svg)](https://gitter.im/SCS_RPC/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
 
 ## Build from source
