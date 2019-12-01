@@ -14,7 +14,7 @@ Unofficial Open-source Discord Rich Presence for ETS2 and ATS
 - [Setup](#setup)
 - [Execution](#execution)
 - [Contact](#contact)
-- [Build from source](#Build-from-source)
+- [Build from source](#build-from-source)
 - [Acknowledgement](#acknowledgement)
 
 ## General info
@@ -62,7 +62,10 @@ Alternatively run any of batch files, likewise included in the root installation
 
 ## Contact
 
-In case of any question hit me up on Discord **Tarasa24**#1761 as this is my obviously preferable mean of communication.
+In case of any question hit me up on Discord **Tarasa24**#1761 or on Gitter.
+
+[![Discord](https://img.shields.io/badge/Tarasa24-1761-<color>.svg)](https://shields.io/)
+[![Gitter](https://badges.gitter.im/SCS_RPC/community.svg)](https://gitter.im/SCS_RPC/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
 
 ## Build from source
 
