@@ -1,4 +1,4 @@
 colorama==0.4.1
 pypresence==3.3.1
-psutil==5.4.7
+psutil>=5.6.6
 scipy==1.2.0
