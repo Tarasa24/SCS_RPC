@@ -1,4 +1,4 @@
-# ⚠️ SCS_RPC is no longer supported! Look for [SCS_RPC2](https://github.com/Tarasa24/SCS_RPC) ⚠️
+# ⚠️ Project no longer supported! Look for [SCS_RPC2](https://github.com/Tarasa24/SCS_RPC2) ⚠️
 
 <center>
 <img align="left" src="https://cdn.discordapp.com/app-assets/529016610137309184/529052463643230211.png">
